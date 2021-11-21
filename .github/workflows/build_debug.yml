@@ -1,4 +1,4 @@
-name: CI
+name: Build Debug APK
 
 on:
   push:
@@ -13,4 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Gradle build
-        run: ./gradlew assembleDebug
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
